@@ -1,24 +1,18 @@
 <?php
-	$arr=array['Nombre']="Agustin";
-	$arr=array['Usuario']="aperez"
-	$arr=array['Contraseña']="agus123";
-	$arr=array['Email']="agusperez@gmail.com";
-	$arr1=array['Nombre']="Esteban";
-	$arr1=array['Usuario']="earizu";
-	$arr1=array['Contraseña']="esteban123";
-	$arr1=array['Email']="estebanarizu@gmail.com";
-	$arr2=array['Nombre']="Emiliano";
-	$arr2=array['Usuario']="ebustos";
-	$arr2=array['Contraseña']="emi123";
-	$arr2=array['Email']="emibustos@gmail.com";
-	$arr3=array['Nombre']="Gianluca";
-	$arr3=array['Usuario']="gpersia"
-	$arr3=array['Contraseña']="gian123";
-	$arr3=array['Email']="gpersia1998@gmail.com";
-	$arr4 = array_merge($arr,$arr1,$arr2,$arr3);
-	foreach ($arr4 as $item => $value) {
-		if ($arr4[nombre]==$_GET[usuario]&&$arr4[clave]==$_GET[clave]) {
-			echo $item .": ". $value ."<br>";
-		}
-	}
+	$user=$_POST[user];
+	$pass=$_POST[pass];
+	$arr = array("Nombre" => "Agustin", "Usuario" => "aperez", "Email" => "aperez@gmail.com", "Contraseña" => "agus123");
+	$arr1 = array("Nombre" => "Esteban", "Usuario" => "earizu", "Email" => "earizu@gmail.com", "Contraseña" => "esteban123");
+	$arr2 = array("Nombre" => "Gianluca", "Usuario" => "gpersia", "Email" => "gpersia1998@gmail.com", "Contraseña" => "gian123");
+	$arr3 = array("Nombre" => "Andres", "Usuario" => "amoreno", "Email" => "amoreno@gmail.com", "Contraseña" => "andres123");
+	$arreglo = array_merge($arr,$arr1,$arr2,$arr3);
+		if ($arreglo[$user][0]==$pass){
+        	$email=$arreglo[$user][1];
+        	echo "<br><h1>Ingreso correcto</h1>";
+        	echo "<br>Usuario: $user";
+        	echo "<br>Contraseña: $pass";
+        	echo "<br>Email: $email";
+    	}else{
+        	echo "<h1>Ingreso incorrecto</h1>";
+    	}
  ?>
