@@ -12,7 +12,7 @@ if (empty($_SESSION['usr'])|empty($_SESSION['pass'])) {
 echo "<h1>".$_SESSION['usr']."</h1>"; 
 $date_2 = date('Y-m-d H:i:s')." ; pagina1.php";
 $_SESSION['date_2'] = $date_2;
-$file = fopen('fecha.txt', 'w+');
+$file = fopen('date.txt', 'w+');
 fwrite($file, $_SESSION['date_h'].PHP_EOL);
 fwrite($file, $_SESSION['date_1'].PHP_EOL);
 fwrite($file, $_SESSION['date_2'].PHP_EOL);
