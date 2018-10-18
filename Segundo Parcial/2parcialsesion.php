@@ -5,13 +5,13 @@
   </head>
   <body>
     <?php
-        $user=$_POST['user1'];
-        $pass=$_POST['pass1'];
+        $user=$_POST['user'];
+        $pass=$_POST['pass'];
         $server="localhost";
-        $user="root";
-        $pass="ruloqueado";
+        $user1="root";
+        $pass1="ruloqueado";
         $db="programacion1";
-        $connect=new PDO("mysql:host=$server;dbname=$db",$user,$pass);
+        $connect=new PDO("mysql:host=$server;dbname=$db",$user1,$pass1);
         $params=array('usuario'=>$user,'clave' => $pass);
         $sql="SELECT * FROM usuario WHERE usuario=:usuario AND clave=:clave";
             $runsql=$connect->prepare($sql);
